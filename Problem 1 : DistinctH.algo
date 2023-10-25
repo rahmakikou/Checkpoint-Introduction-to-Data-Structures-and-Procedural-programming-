@@ -1,0 +1,31 @@
+ALGORITHM DistinctHash 
+VAR
+tab1: ARRAY_OF INTEGER :={3,1,7,9} ;
+tab2: ARRAY_OF INTEGER :={2,4,1,9,3} ; 
+H: HASH_TABLE <INTEGER,INTEGER>;
+sum: INTEGER := 0; 
+BEGIN
+   FOR i FROM 1 TO max tab1.length step 1 DO
+H.insert (Tab1(i), 1) 
+   END_FOR
+FOR i FROM 1 TO tab2.length STEP 1  DO
+    IF (H.lookup(tab2{i}) = false) THEN 
+H.insert (tab2{i},1) 
+    ELSE
+       H.insert (tab2{i},2) 
+
+FOR i FROM 1 TO tab1.length STEP 1  DO
+   IF (H.get(tab1{i})=1) THEN
+      sum:= sum+ Tab1{i} 
+   END_IF
+END_FOR
+
+    END_IF
+END_FOR
+
+FOR i FROM 1 TO tab2.length STEP 1  DO
+   IF (H.get(tab1{i})=1) THEN
+      sum:= sum+ tab2{i}  
+   END_IF
+END_FOR 
+END 

@@ -1,0 +1,33 @@
+FUNCTION ProduitScalaire (r,t: ARRAY_OF INTEGER [], VAR z:BOOLEAN): 
+VAR
+    sum: INTEGER :=0; 
+    
+BEGIN
+   FOR i FROM 1 TO r.length STEP 1 DO
+   sum:=sum+ (r{i}*t{i});
+   END_FOR  
+
+IF (sum=0) THEN 
+   z:= True 
+ELSE
+    z:= False 
+END_IF 
+END
+
+
+ALGORITHM problem2 
+VAR
+    v1: ARRAY_OF INTEGER []:= {2,4};
+    v2: ARRAY_OF INTEGER []:= {4,6};  
+    result: BOOLEAN; 
+
+BEGIN
+     ProduitScalaire (v1,v2, result); 
+
+IF (result=True) THEN 
+   WRITE ("Orthogonale")
+ELSE 
+   WRITE ("Non Orthogonale")
+END_IF
+    END_IF 
+END  
